@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>房间管理</title>
+    <link rel="stylesheet" href="/static/css/layout.css">
+    <link rel="stylesheet" href="/static/css/house.css">
+    <script src="/static/js/jquery.min.js"></script>
+</head>
+<body>
+<div class="topbar">
+    <div class="topbar-wrap">
+        <div class="topbar-left">
+            <ul class="topinfo-l">
+                <li class="logo">
+                    <div class="logo-wrap">
+                        <a href="">
+                            <img src="/static/img/icon/logo.jpg" height="24" width="90"/>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="look-wrap">
+                        <a href="">总览</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="service-wrap">
+                        <a href="">产品与服务<i class="caret"></i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="topbar-right">
+            <ul class="topinfo-r">
+                <li class="cost-dropdown">
+                    <div class="cost-wrap">
+                        <a>费用<i class="caret"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="javascript:void(0)">剩余：<i class="remaining-amount">22</i>元</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="help-wrap">
+                        <a href="">帮助</a>
+                    </div>
+                </li>
+                <li class="user-dropdown">
+                    <div class="user-wrap">
+                        <a href="javascript:void(0)">
+                            <i class="p_username">157****0092</i>
+                            <i class="caret"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="javascript:void(0)">资产管理</a>
+                            <a href="javascript:void(0)">用户信息</a>
+                            <a href="javascript:void(0)" class="admin-esc">退出</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="content-wrap">
+        <div class="content-left">
+            <div class="menu-logo">
+                <img src="/static/img/icon/state_icon.png" height="60" width="60"/>
+                <p class="menu-title">云服务器控制台</p>
+            </div>
+            <div class="menu">
+                <div class="menu-li current" data-page="house-manager">
+                    <!--<img src="/static/img/icon/ico02.png" class="house-ico" height="14" width="16"/>-->
+                    <a href="javascript:void(0)">房间管理</a>
+                </div>
+                <div class="menu-li" data-page="house-info">
+                    <a href="javascript:void(0)">用户信息</a>
+                </div>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="house-manager tab-page">
+                <div class="c-header">
+                    <div class="header-l f-left">
+                        <button type="button" class="btn add-btn" id="add-house"><i class="">+</i> 添加房间</button>
+                        <button type="button" class="btn btn-default delAll-btn">删除</button>
+                        <div class="msg"></div>
+                    </div>
+                    <div class="header-r f-right">
+                        <div class="search-box">
+                            <input type="text" name="search-house" class="search-text" placeholder="搜索房间"
+                                   aria-describedby="search-btn">
+                            <a href="javascript:void(0)" class="search-btn">
+                                <img src="/static/img/icon/search.png" height="12" width="14"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-table">
+                    <input type="hidden" name="username" value="{{username}}">
+                    <input type="hidden" name="user_id" value="{{user_id}}">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="t-check">
+                                <div class="checkbox">
+                                    <input type="checkbox" class="selectAll-house">
+                                </div>
+                            </th>
+                            <th class="t-house">
+                                <div class="solid">房间名</div>
+                            </th>
+                            <th class="t-status">
+                                <div class="solid">状态</div>
+                            </th>
+                            <th class="t-user">
+                                <div class="solid">主播名</div>
+                            </th>
+                            <th class="t-time">
+                                <div class="solid">创建时间</div>
+                            </th>
+                            <th class="t-description">
+                                <div class="solid">描述</div>
+                            </th>
+                            <th class="t-opt">
+                                <div class="solid">操作</div>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="c-footer">
+                    <div class="pagination">
+                        <div class="f-left">
+                            <p class="clearfix">
+                                已选<strong class="check-num">0</strong>项,共<strong class="check-all-num">1</strong>项
+                            </p>
+                        </div>
+                        <div class="f-right">
+                            <div class="text">每页显示行</div>
+                            <div class="show-num"><i class="pagesize">10</i><i class="caret"></i>
+                                <div class="tip-con">
+                                    <div class="tip-menu">
+                                        <ul>
+                                            <li data-pagesize="10">10</li>
+                                            <li data-pagesize="15">15</li>
+                                            <li data-pagesize="20">20</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tip-arrow">
+                                        <em></em>
+                                        <ins></ins>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="pagination-btn">
+                                <li>
+                                <span class="page-first">
+                                <img src="/static/img/icon/icon-first.png" height="11" width="9"/>
+                                </span>
+                                </li>
+                                <li>
+                                <span class="page-prev">
+                                <img src="/static/img/icon/icon-prev.png" height="11" width="7"/>
+                                </span>
+                                </li>
+                                <li>
+                                    <!--<span class="page-num">i</span>-->
+                                    <span class="page-num">
+                                    <i class="page-index">1</i>/<i class="page-total">1</i>
+                                </span>
+                                </li>
+                                <li>
+                                <span class="page-next">
+                                <img src="/static/img/icon/icon-next.png" height="11" width="7"/>
+                                </span>
+                                </li>
+                                <li>
+                                <span class="page-last">
+                                <img src="/static/img/icon/icon-last.png" height="11" width="9"/>
+                                </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="house-info tab-page">
+                <div class="info-header">
+                    <h1>用户信息</h1>
+                </div>
+                <div class="info-body">
+                    <dl class="dl-horizontal">
+                        <dt>到期时间：</dt>
+                        <dd class="due-time"></dd>
+                        <dt>app_key：</dt>
+                        <dd class="app-key"></dd>
+                        <!--<dt>带宽：</dt>-->
+                        <!--<dd class="bandwidth"> </dd>-->
+                        <dt>app_token：</dt>
+                        <dd class="app-token"></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-wrap">
+        <p>Copyright©2017 www.jucaipeng1688.com All Right Reserved 闽ICP备17023476号-1</p>
+    </div>
+</footer>
+
+<div class="ui-mask"></div>
+<div class="popover" id="house-popover">
+    <div class="popover-header">
+        <div class="title">
+            添加房间
+        </div>
+        <div class="popover-close">
+            <img src="/static/img/icon/no.png" height="12" width="11"/>
+        </div>
+    </div>
+    <div class="popover-content">
+        <form action="" method="post" class="form-horizontal" id="form-house">
+            <div class="form-group">
+                <label class="col-xs-4 control-label">房间名称：</label>
+                <div class="col-xs-6">
+                    <input type="text" name="new_channel" class="form-control" autocomplete="off" maxlength="10"
+                           value="">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-4 control-label">主播名称：</label>
+                <div class="col-xs-6">
+                    <input type="text" name="new_hostess" class="form-control" autocomplete="off" maxlength="8"
+                           value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4 control-label">密码：</label>
+                <div class="col-xs-6">
+                    <input type="password" name="new_password" class="form-control" autocomplete="off" minlength="6"
+                           maxlength="20" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4 control-label">密码确认：</label>
+                <div class="col-xs-6">
+                    <input type="password" name="again_password" class="form-control" autocomplete="off" minlength="6"
+                           maxlength="20" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4 control-label">房间描述：</label>
+                <div class="col-xs-6">
+                    <textarea type="text" name="new_description" class="form-control textarea-des" rows="3"
+                              placeholder="这个家伙很懒 什么也没有留下" maxlength="100"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="popover-footer">
+        <button type="button" class="btn-xs sure-add-house">确定</button>
+        <button type="button" class="btn-xs cancel-add cancel-add-house">取消</button>
+    </div>
+</div>
+<div class="popover" id="hostessMg-popover">
+    <div class="popover-header">
+        <div class="title">主播管理</div>
+        <div class="popover-close">
+            <img src="/static/img/icon/no.png" height="12" width="11"/>
+        </div>
+    </div>
+    <div class="popover-content">
+        <form action="" method="post" class="form-horizontal" id="form-hostess">
+            <div class="form-group">
+                <label class="col-xs-4 control-label">主播用户名：</label>
+                <div class="col-xs-6">
+                    <input type="text" name="hostess-name" class="form-control" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4 control-label">主播密码：</label>
+                <div class="col-xs-6">
+                    <input type="password" name="hostess-password" class="form-control" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-xs-4 control-label">密码确认：</label>
+                <div class="col-xs-6">
+                    <input type="password" name="hostess-password-again" class="form-control" value="">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="popover-footer">
+        <button type="button" class="btn-xs sure-update-hostess">确定</button>
+        <button type="button" class="btn-xs cancel-add">取消</button>
+    </div>
+</div>
+</body>
+</body>
+</html>
+<script src="/static/js/house.js"></script>
+

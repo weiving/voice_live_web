@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="container-wrap">
+        <div class="title">
+            您需要登录后才能访问
+            <a href="javascript:void(0)" class="login-close">关闭</a>
+        </div>
+        <div class="login-box">
+            <div class="login-wrap">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
+                            <input type="text" id="username" class="form-control" placeholder="请输入账号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
+                            <input type="password" id="password" class="form-control" placeholder="请输入密码">
+                        </div>
+                    </div>
+                    <div class="from-group">
+                        <div class="lg-field">
+                            <a href="" class="f-left">免费注册</a>
+                            <a id="forget" class="f-right">忘记密码</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="login-btn">
+                            <button type="button" class="btn btn-primary" id="login">登录</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="dialog-msg" tabindex="-1" role="dialog" aria-labelledby="myModel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <div class="dialog-btn" id="dialog-btn">确定</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var $login = function () {
+        var dialogModal = $("#dialog-msg");
+        var modal_body = $('.modal-body');
+
+        function isVaild(val, type) {
+            if (!val || val.match(/([w]){6,12}$/)) {
+                if (type === 'u') {
+                    modal_body.html("用户名不能为空！");//只能为英文或者数字
+                }
+                if (type === 'p') {
+                    modal_body.html("密码不能为空！");
+                }
+                dialogModal.modal('show')
+                return false
+            } else {
+                return true
+            }
+
+        }
+
+        function Login() {
+            var username = $("#username").val();
+            var password = $("#password").val();
+            if (isVaild(username, 'u') && isVaild(password, 'p')) {
+                $.ajax({
+                    type: "post",
+                    url: "/v1/data/user/login",
+                    data: {
+                        "username": username,
+                        "password": password
+                    },
+                    success: function (data) {
+                        if (data.code == 200) {
+                            window.location.replace("/v1/view/protect/house.html");
+                        } else {
+                            modal_body.html("登录错误,请重试！");
+                            dialogModal.modal('show')
+                        }
+                    }
+                });
+            }
+
+        }
+
+        function empty() {
+            dialogModal.modal('hide');
+            modal_body.html("")
+        }
+
+        return {
+            init: function () {
+                $("#login").click(function () {
+                    Login();
+                });
+                $("#dialog-btn").click(function () {
+                    empty();
+                });
+                document.onkeydown = function (e) {
+                    if (e = e || window.event) ;
+                    if (e.keyCode == 13) {
+                        Login();
+                    }
+                }
+            }
+        }
+    }();
+    $(function () {
+        $login.init();
+    })
+</script>
+</html>

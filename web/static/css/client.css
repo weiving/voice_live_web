@@ -1,0 +1,396 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font: 12px "Microsoft Yahei";
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .p-header {
+    width: 100%;
+    height: 100px;
+    background: #424956;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.p-header .header-l {
+    float: left;
+    width: 220px;
+}
+
+.header-l .hostessInfo, .header-r .onlineInfo {
+    height: 100px;
+    padding: 15px 10px;
+}
+
+.header-l .hostessInfo .hostess-img {
+    float: left;
+}
+
+.header-l .hostessInfo .hostess-img img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.header-l .hostessInfo .info {
+    float: left;
+    padding-left: 10px;
+    width: 130px;
+    height: 80px;
+}
+
+.header-l .hostessInfo .info .house-name {
+    font-size: 18px;
+    color: #fff;
+    line-height: 40px;
+    width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.header-l .hostessInfo .info .hostess-name {
+    font-size: 16px;
+    color: #AAABAD;
+    width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.p-header .header-r {
+    float: right;
+    /*height: 110px;*/
+}
+
+.header-r .onlineInfo .online {
+    float: right;
+    color: #fff;
+    font-size: 18px;
+    vertical-align: top;
+    height: 25px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.header-r .onlineInfo .online .online-ico {
+    display: inline-block;
+    width: 20px;
+    height: 15px;
+    background: url("/static/img/icon/hear.png");
+    background-size: cover;
+}
+
+.header-r .onlineInfo .online .online-num {
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.header-r .onlineInfo .player-btn {
+    clear: both;
+    border-radius: 50px;
+    background: #262529;
+    height: 35px;
+    width: 120px;
+    color: #838384;
+    font-size: 16px;
+    position: relative;
+}
+
+.header-r .onlineInfo .player-btn .player-close {
+    position: absolute;
+    top: 3px;
+    left: 18px;
+    z-index: 100;
+}
+
+.header-r .onlineInfo .player-btn .player {
+    position: absolute;
+    top: 3px;
+    left: 70px;
+    z-index: 100
+}
+
+.header-r .onlineInfo .player-btn .player-status {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    background: url("/static/img/icon/receiveBtn.png");
+    background-size: cover;
+    height: 30px;
+    width: 60px;
+    moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    z-index: 50;
+}
+
+.header-r .onlineInfo .player-btn .text-color {
+    color: #fff;
+}
+
+.container .talk-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: url("/static/img/icon/clientbg.jpg");
+    background-size: cover;
+    padding: 30px 0px 5px 0px;
+    overflow: hidden;
+}
+
+.talk-wrap .talk-content {
+    flex: 1;
+    color: #fff;
+    padding: 0px 15px;
+    overflow-y: auto;
+    height: -webkit-calc(100vh - 200px);
+    height: calc(100vh - 200px);
+}
+
+.talk-wrap .talk-content .user-talk {
+    position: relative;
+    width: 100%;
+    /*margin-bottom: 10px;*/
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.talk-wrap .talk-content .user-talk .name {
+    font-size: 14px;
+    color: #A7AEB8;
+    background: #455675;
+    padding: 3px 5px;
+    height: 21px;
+    line-height: 21px;
+}
+
+.talk-wrap .talk-content .user-talk .comment {
+    font-size: 14px;
+    margin-left: 10px;
+    color: #fff;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+
+}
+
+.talk-wrap .talk-content .user-talk .text-red {
+    color: #D44B41;
+}
+
+.talk-wrap .talk-content .user-talk .text-purple {
+    color: #865FBB;
+}
+
+.talk-wrap .talk-content .user-talk .text-green {
+    color: #26C07E;
+}
+
+.talk-wrap .talk-content .user-talk .text-blue {
+    color: #12EEE1;
+}
+
+.talk-wrap .talk-content .user-talk .text-white {
+    color: #ffffff;
+}
+
+.talk-wrap .talk-footer {
+    height: 60px;
+    width: 100%;
+    display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+    display: -moz-box; /* Firefox 17- */
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+    display: -moz-flex; /* Firefox 18+ */
+    display: -ms-flexbox; /* IE 10 */
+    display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+    justify-content: center;
+    align-items: center;
+}
+
+.talk-wrap .talk-footer .talk-msg {
+    flex: 1;
+    padding: 0px 10px 0px 20px;
+}
+
+.talk-wrap .talk-footer .put-comment {
+    border: none;
+    border-radius: 50px;
+    background: #383B41;
+    /*margin: 10px 5px 20px 30px;*/
+    padding: 5px 15px;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.talk-wrap .talk-footer .send-btn {
+    width: 67px;
+    height: 30px;
+    background: url("/static/img/icon/sendBtn.png");
+    background-size: cover;
+    margin-right: 5px;
+    /*margin: 10px 10px 20px 0px;*/
+}
+
+.talk-wrap .talk-footer .second-btn {
+    width: 67px;
+    height: 30px;
+    line-height: 30px;
+    /*margin: 10px 10px 20px 0px;*/
+    cursor: not-allowed;
+    background: #ddd;
+    border: 1px solid #D9D9D9;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.popover .popover-content {
+    font-size: 18px;
+}
+
+.popover .popover-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.video-js {
+    width: 1px;
+    height: 1px;
+    color: #424956;
+    background: #424956;
+}
+
+@media (max-width: 320px) {
+    .container .p-header {
+        height: 80px;
+    }
+
+    .p-header .header-l {
+        float: left;
+        width: 150px;
+    }
+
+    .header-l .hostessInfo, .header-r .onlineInfo {
+        height: 80px;
+        padding: 10px 5px;
+    }
+
+    .header-l .hostessInfo .hostess-img img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    .header-l .hostessInfo .info {
+        float: left;
+        padding-left: 10px;
+        width: 80px;
+        height: 60px;
+    }
+
+    .header-l .hostessInfo .info .house-name {
+        font-size: 14px;
+        line-height: 40px;
+        width: 100px;
+    }
+
+    .header-l .hostessInfo .info .hostess-name {
+        font-size: 12px;
+        width: 100px;
+    }
+
+    .header-r .onlineInfo .online {
+        font-size: 14px;
+        height: 20px;
+    }
+
+    .header-r .onlineInfo .online .online-ico {
+        display: inline-block;
+        width: 15px;
+        height: 10px;
+        background: url("/static/img/icon/hear.png");
+        background-size: cover;
+    }
+
+    .header-r .onlineInfo .player-btn {
+        clear: both;
+        border-radius: 50px;
+        background: #262529;
+        height: 30px;
+        width: 105px;
+        color: #838384;
+        font-size: 12px;
+        position: relative;
+    }
+
+    .header-r .onlineInfo .player-btn .player-close {
+        position: absolute;
+        top: 5px;
+        left: 16px;
+        z-index: 100;
+    }
+
+    .header-r .onlineInfo .player-btn .player {
+        position: absolute;
+        top: 5px;
+        left: 67px;
+        z-index: 100
+    }
+
+    .header-r .onlineInfo .player-btn .player-status {
+        position: absolute;
+        top: 2px;
+        left: 4px;
+        background: url("/static/img/icon/receiveBtn.png");
+        background-size: cover;
+        height: 25px;
+        width: 47px;
+        moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        z-index: 50;
+    }
+
+    .talk-wrap .talk-content .user-talk .name {
+        font-size: 12px;
+    }
+
+    .talk-wrap .talk-content .user-talk .comment {
+        font-size: 12px;
+    }
+}

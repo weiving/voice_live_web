@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>客户端-主播间</title>
+    <link rel="stylesheet" href="/static/css/layout.css">
+
+    <link rel="stylesheet" href="/static/css/client.css">
+    <link rel="stylesheet" href="/static/vod/nep.min.css">
+
+    <script src="/static/vod/nep.min.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <header class="p-header">
+        <div class="header-l">
+            <div class="hostessInfo">
+                <div class="hostess-img">
+                    <img src="/static/img/icon/header.png"/>
+                </div>
+                <div class="info">
+                    <div class="house-name">主播间</div>
+                    <div class="hostess-name">主播名</div>
+                </div>
+            </div>
+        </div>
+        <div class="header-r">
+            <div class="onlineInfo">
+                <div class="online">
+                    <div class="online-ico"></div>
+                    <p class="online-num">1254</p>人
+                </div>
+                <div class="player-btn">
+                    <span class="player-status"></span>
+                    <span class="player-close text-color" id="stop-live">关闭</span>
+                    <span class="player" id="start-live">收听</span>
+                    <!--<video id="my-video" class="video-js" x-webkit-airplay="allow"-->
+                    <!--webkit-playsinline playsinline x5-playsinline=""-->
+                    <!--x5-video-player-type='h5' x5-video-player-fullscreen='true'-->
+                    <!--controls="true"-->
+                    <!--preload="auto" width="1" height="1" style="visibility: hidden"></video>-->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="talk-wrap">
+        <div class="talk-content" id="talk-list">
+        </div>
+        <div class="talk-footer">
+            <div class="talk-msg">
+                <input type="text" class="put-comment" id="msg-input" placeholder="发评论">
+            </div>
+            <a href="javascript:void(0)" class="send-btn" id="send-btn"></a>
+            <span class="second-btn hidden" id="countdown">3s</span>
+        </div>
+    </div>
+</div>
+
+<div class="ui-mask"></div>
+<div class="popover" id="msg-popover">
+    <div class="popover-content"></div>
+    <div class="popover-footer">
+        <button type="button" class="popover-btn" id="popover-btn">确定</button>
+    </div>
+</div>
+</body>
+</html>
+<script src="/static/js/client.js"></script>

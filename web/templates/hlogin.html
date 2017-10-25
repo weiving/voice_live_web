@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>主播登录</title>
+    <link rel="stylesheet" href="/static/css/layout.css">
+    <link rel="stylesheet" href="/static/css/hlogin.css">
+    <script src="/static/js/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="login-wrap">
+        <div class="login-header">主播登录</div>
+        <div class="login-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">主播名：</label>
+                    <div class="col-xs-9">
+                        <input type="text" name="hostess-name" class="form-control input-larger" placeholder="请输入用户名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">密码：</label>
+                    <div class="col-xs-9">
+                        <input type="password" name="hostess-password" class="form-control input-larger"
+                               placeholder="请输入密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-3 col-xs-9">
+                        <button type="button" class="btn btn-primary" id="hostess-login">登录</button>
+                        <button type="button" class="btn btn-default" id="cancel-login">取消</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-3 col-xs-9">
+                        <p class="msg"></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="/static/js/hlogin.js"></script>

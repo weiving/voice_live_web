@@ -1,0 +1,93 @@
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.container .talk-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: url("/static/img/icon/clientbg.jpg");
+    background-size: cover;
+    padding: 30px 0px 5px 0px;
+    overflow: hidden;
+}
+
+.talk-wrap .talk-content {
+    flex: 1;
+    color: #fff;
+    padding: 0px 15px;
+    overflow-y: auto;
+    /*height: -webkit-calc(100vh - 200px);*/
+    /*height: calc(100vh - 200px);*/
+}
+
+.talk-wrap .talk-content .user-talk {
+    position: relative;
+    width: 100%;
+    /*margin-bottom: 10px;*/
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.talk-wrap .talk-content .user-talk .name {
+    font-size: 14px;
+    color: #A7AEB8;
+    background: #455675;
+    padding: 3px 5px;
+    height: 21px;
+    line-height: 21px;
+}
+
+.talk-wrap .talk-content .user-talk .comment {
+    font-size: 14px;
+    margin-left: 10px;
+    color: #fff;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+
+}
+
+.talk-wrap .talk-content .user-talk .text-red {
+    color: #D44B41;
+}
+
+.talk-wrap .talk-content .user-talk .text-purple {
+    color: #865FBB;
+}
+
+.talk-wrap .talk-content .user-talk .text-green {
+    color: #26C07E;
+}
+
+.talk-wrap .talk-content .user-talk .text-blue {
+    color: #12EEE1;
+}
+
+.talk-wrap .talk-content .user-talk .text-white {
+    color: #ffffff;
+}
+
+.talk-wrap .talk-content .user-talk .btn-xs {
+    height: 22px;
+    padding: 1px 6px;
+    background-color: #000;
+    color: #A7AEB8;
+    margin-left: 5px;
+}
+
+.talk-wrap .talk-content .user-talk .stop-say.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.talk-wrap .talk-content .user-talk .msg-success .msg-btn {
+    height: 22px;
+    padding: 1px 6px;
+    color: #ffffff;
+    background-color: #5cb85c;
+    border: none;
+}

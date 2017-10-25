@@ -1,0 +1,562 @@
+
+.content-wrap {
+    display: flex;
+    height: 100%;
+}
+
+.content-wrap .content-left {
+    width: 250px;
+    border: 1px solid #e6e6e6;
+    background: #fafafa;
+}
+
+.content-wrap .content-right {
+    flex: 1;
+    background: #fff;
+    min-height: 500px;
+    height: 100%;
+}
+
+/*左菜单栏*/
+.menu-logo {
+    /*height: 132px;*/
+    height: 150px;
+    text-align: center;
+}
+
+.menu-logo img {
+    width: 70px;
+    height: 70px;
+    margin: 30px auto 0;
+}
+
+.menu-logo .menu-title {
+    font-size: 18px;
+    margin: 10px auto;
+}
+
+.menu {
+    font-size: 14px;
+}
+
+.menu .menu-li {
+    height: 44px;
+    line-height: 44px;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    padding-left: 40px;
+    margin-right: -1px;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu .menu-li.current {
+    border-right: 1px solid #fff;
+    border-left: 2px solid #0692E3;
+    margin-right: -1px;
+    background: #fff;
+}
+
+.menu .menu-li.current a {
+    color: #3AA9E9;
+}
+
+.menu .menu-li:last-child {
+    border-top: none;
+}
+
+.menu .house-ico {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+}
+
+/*右内容*/
+.c-header {
+    height: 88px;
+    padding: 34px 10px 20px 16px;
+}
+
+.c-header .add-btn {
+    width: 116px;
+    background: #298cef;
+    color: #fff;
+}
+
+.c-header .add-btn:hover,
+.c-header .add-btn:focus,
+.c-header .add-btn:active {
+    background-color: #2781ef;
+    border-color: #2074ef;
+}
+
+.c-header .delAll-btn {
+    width: 70px;
+    margin-left: 20px;
+    background: #fafafa;
+    border: 1px solid #dddddd;
+}
+
+.c-header .delAll-btn:hover,
+.c-header .delAll-btn:focus,
+.c-header .delAll-btn:active {
+    background-color: #f2f2f2;
+}
+
+.c-header .msg {
+    display: inline-block;
+}
+
+.c-header .msg .msg-success {
+    display: inline-block;
+    width: 80px;
+    margin-left: 20px;
+    padding: 6px 12px;
+    color: #fff;
+    background-color: #5cb85c;
+    border: 1px solid #4cae4c;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.c-header .msg .msg-error {
+    display: inline-block;
+    /*width: 80px;*/
+    margin-left: 20px;
+    padding: 6px 12px;
+    color: #fff;
+    background-color: #d9534f;
+    border: 1px solid #d43f3a;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.c-header .search-box {
+    position: relative;
+}
+
+.c-header .search-text {
+    width: 240px;
+    height: 32px;
+    border: 1px solid #d5d5d5;
+    padding: 0 30px 0 10px;
+    border-radius: 2px;
+}
+
+.c-header .search-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+.c-header .search-btn img {
+    margin: 10px;
+}
+
+.c-table, .c-footer {
+    padding: 0 10px 50px 16px;
+}
+
+.c-table .table {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+
+/*tbale表格*/
+.table > thead > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #d1d5de;
+    border-bottom: 1px solid #d1d5de;
+    /*border-right: 1px solid #c5c5c5;*/
+    background: #f6f8fa;
+}
+
+.table > thead > tr > th .solid {
+    border-left: 1px solid #c5c5c5;
+}
+
+.table > tbody > tr > td {
+    padding: 30px 10px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #e6ebf2;
+    word-break: break-all
+}
+
+.table > tbody > tr:last-child {
+    border-bottom: 1px solid #e6ebf2;
+}
+
+.table .t-check {
+    width: 55px;
+}
+
+.table .t-house {
+    width: 125px;
+}
+
+.table .t-status {
+    width: 100px;
+}
+
+.table .t-user {
+    width: 125px;
+}
+
+.table .t-time {
+    width: 178px;
+}
+
+.table .t-description {
+    width: 160px;
+}
+
+.table .t-opt {
+    width: 210px;
+}
+
+.table .freeze-btn {
+    width: 50px;
+    border: 1px solid #298cef;
+    color: #298cef;
+    background: #fff;
+}
+
+.table .freeze-btn:hover,
+.table .freeze-btn:focus,
+.table .freeze-btn:active {
+    color: #fff;
+    background: #298cef;
+}
+
+.table .hmg-btn {
+    width: 74px;
+    border: 1px solid #f7a54a;
+    color: #f7a54a;
+    background: #fff;
+}
+
+.table .hmg-btn:hover,
+.table .hmg-btn:focus,
+.table .hmg-btn:active {
+    color: #fff;
+    background: #f7a54a;
+}
+
+.table .del-btn {
+    width: 50px;
+    border: 1px solid #ec4b5b;
+    color: #ec4b5b;
+    background: #fff;
+}
+
+.table .del-btn:hover,
+.table .del-btn:focus,
+.table .del-btn:active {
+    color: #fff;
+    background: #ec4b5b;
+}
+
+.table .d-status.living {
+    color: #34D18D;
+}
+
+.table .d-status.freezing {
+    color: #ec4b5b;
+}
+
+/*分页*/
+.pagination {
+    height: 26px;
+    line-height: 26px;
+}
+
+.pagination .f-left {
+    color: #a2a2a2;
+}
+
+.pagination .f-left .check-num, .pagination .f-left .check-all-num {
+    margin: 0 3px;
+}
+
+.pagination .f-right {
+    color: #404a58;
+}
+
+.pagination .f-right .text {
+    display: inline-block;
+    float: left;
+}
+
+.pagination .f-right .show-num {
+    display: inline-block;
+    padding: 0 20px;
+    cursor: pointer;
+    color: #000;
+    float: left;
+    position: relative;
+}
+
+.pagination .f-right .show-num .tip-con {
+    position: absolute;
+    z-index: 228;
+    top: 30px;
+    left: 5px;
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border: 1px solid rgba(0, 0, 0, .2);
+    -webkit-transition: opacity .218s;
+    transition: opacity .218s;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    padding: 5px 0;
+    display: none;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.pagination .f-right .show-num .tip-menu ul {
+    width: 50px;
+    text-align: center;
+}
+
+.pagination .f-right .show-num .tip-menu ul li:hover {
+    background: #ccc;
+}
+
+.pagination .f-right .show-num .tip-arrow {
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    position: absolute;
+    top: -16px;
+    left: 17px;
+}
+
+.pagination .f-right .show-num .tip-arrow em, .pagination .f-right .show-num .tip-arrow ins {
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    position: absolute;
+    border: 8px solid transparent;
+    border-style: dashed dashed solid;
+}
+
+.pagination .f-right .show-num .tip-arrow em {
+    border-bottom-color: #d8d8d8;
+}
+
+.pagination .f-right .show-num .tip-arrow ins {
+    border-bottom-color: #fff;
+    top: 2px;
+}
+
+.pagination .show-num .caret {
+    margin-top: -5px;
+}
+
+.pagination .pagination-btn {
+    float: left;
+}
+
+.pagination .pagination-btn li {
+    display: inline;
+    cursor: pointer;
+}
+
+.pagination .pagination-btn li span {
+    position: relative;
+    float: left;
+    padding: 3px 6px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    border: 1px solid #d1d2d3;
+}
+
+.pagination .pagination-btn li span.disabled {
+    background-color: #f3f3f3;
+}
+
+.pagination .pagination-btn li:first-child span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.pagination .pagination-btn li span.page-num {
+    text-align: center;
+    width: 42px;
+    background: #fff;
+    color: #000;
+}
+
+.popover .popover-footer .sure-add-house {
+    width: 70px;
+    background: #4673f3;
+    border: 1px solid #3e65f3;
+    color: #fff;
+}
+
+.popover .popover-footer .sure-add-house:hover,
+.popover .popover-footer .sure-add-house:focus,
+.popover .popover-footer .sure-add-house:active {
+    background: #3e65f3;
+    color: #fff;
+}
+
+.popover .popover-footer .cancel-add-house {
+    width: 70px;
+    background: #fff;
+    color: #4673f3;
+    border: 1px solid #d3d4d4;
+    margin-left: 10px;
+}
+
+.popover .popover-footer .cancel-add-house:hover,
+.popover .popover-footer .cancel-add-house:focus,
+.popover .popover-footer .cancel-add-house:active {
+    background: #f3f4f4;
+}
+
+.form-horizontal .textarea-des {
+    resize: none;
+}
+
+.popover .popover-header {
+    width: 550px;
+}
+
+/*分页*/
+.pagination-btn .page-first.disabled,
+.pagination-btn .page-prev.disabled,
+.pagination-btn .page-next.disabled,
+.pagination-btn .page-last.disabled {
+    cursor: not-allowed;
+}
+
+/*用户信息页*/
+.content-right .house-info {
+    height: 88px;
+    padding: 34px 10px 20px 16px;
+    display: none;
+}
+
+.content-right .house-info .info-header {
+    height: 34px;
+    line-height: 34px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.content-right .house-info .info-body {
+    margin-top: 20px;
+    padding: 20px 10px;
+    background-color: #f7f8fc;
+    height: 200px;
+}
+
+.house-info .dl-horizontal {
+    font-size: 16px;
+}
+
+.house-info .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.house-info .dl-horizontal dd {
+    margin-left: 180px;
+    margin-bottom: 20px;
+}
+
+.topbar-wrap li {
+    line-height: 30px;
+}
+
+.topbar-wrap li .logo-wrap, .topbar-wrap li .look-wrap, .topbar-wrap li .cost-wrap, .topbar-wrap li .help-wrap {
+    padding: 0 25px;
+    margin: 10px 0;
+    border-right: 1px solid #444444;
+}
+
+.topbar-wrap li .service-wrap, .topbar-wrap li .user-wrap {
+    padding: 0 25px;
+    margin: 10px 0;
+}
+
+.cost-dropdown, .user-dropdown {
+    position: relative;
+    z-index: 100;
+}
+
+.cost-dropdown .dropdown-menu, .user-dropdown .dropdown-menu {
+    display: none;
+}
+
+.cost-dropdown.current, .user-dropdown.current {
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    background: #fff;
+}
+
+.cost-dropdown.current .cost-wrap, .user-dropdown.current .user-wrap {
+    padding: 0 24px;
+    margin: 0;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.cost-dropdown.current a, .user-dropdown.current a {
+    color: #000;
+}
+
+.cost-dropdown.current .dropdown-menu, .user-dropdown.current .dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 49px;
+    left: 0px;
+    /*width: 100%;*/
+    width: 150px;
+    border: 1px solid #000;
+    background: #fff;
+    z-index: 9999;
+    border-top: none;
+}
+
+.cost-dropdown.current .dropdown-menu a, .user-dropdown.current .dropdown-menu a {
+    display: block;
+    line-height: 20px;
+    padding: 10px;
+    border-bottom: 1px dotted #ccc;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cost-dropdown.current .dropdown-menu a:last-child, .user-dropdown.current .dropdown-menu a:last-child {
+    border-bottom: none;
+}
+

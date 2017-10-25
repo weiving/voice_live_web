@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NePublisher Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="//nos.netease.com/vod163/nePublisher.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="/static/js/utils.js"></script>-->
+    <style>
+        #my-publisher {
+            position: absolute;
+            top: 150px;
+            left: 100px;
+            /*width: 300px;*/
+            /*height: 300px;*/
+            z-index: 9999;
+        }
+    </style>
+
+</head>
+<body style="position: relative">
+<h1>NePublisher Demo</h1>
+<div class="m-input">
+    <span class="u-input-name">摄像头：</span>
+    <select class="u-input" id="cameraSelect">
+    </select>
+</div>
+<div class="m-input">
+    <span class="u-input-name">麦克风：</span>
+    <select class="u-input" id="microPhoneSelect">
+    </select>
+</div>
+<div class="m-input">
+    <button class="button button-primary button-rounded testBtn" id="publishBtn" onclick="startPublish()">开始直播</button>
+    <button class="button button-primary button-rounded testBtn" id="stopBtn" onclick="stopPublish()">结束直播</button>
+    <span class="u-status"></span>
+</div>
+<div id="my-publisher"></div>
+<div id="content">
+    <p>聊天记录</p>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    var viewOptions = {
+        videoWidth: 640,    // Number 可选 推流分辨率 宽度 default 640
+        videoHeight: 480,   // Number 可选 推流分辨率 高度 default 480
+        fps: 15,            // Number 可选 推流帧率 default 15
+        bitrate: 600,       // Number 可选 推流码率 default 600
+        video: true,       // Boolean 可选 是否推流视频 default true
+        audio: true       // Boolean 可选 是否推流音频 default true
+    }
+    var cameraList,
+        microPhoneList,
+        cameraOptions = '',
+        microPhoneOptions = '',
+        channel_info;
+    //    var user_id = $utils.get_cookie("user_id");
+    //    $.ajax({
+    //        type: "post",
+    //        url: "/channel/get_user_channel_info/" + user_id,
+    //        data: {},
+    //        success: function (data) {
+    //            if (data.code == 200) {
+    //                channel_info = data.info
+    //                if (channel_info.status == '2') {
+    //                    $.messager.alert('My Title', 'Here is a info message!', 'info', function (r) {
+    //                        window.location.replace("login.html");
+    //                    });
+    //                }
+    //            } else {
+    //                channel_info = {}
+    //            }
+    //        }
+    //    });
+    var publishBtn = document.getElementById('publishBtn');//开始直播
+    var previewBtn = document.getElementById('previewBtn');
+    var testInput = document.getElementsByClassName('u-input');
+    var myPublisher = new nePublisher('my-publisher', {
+        //viewOptions
+        videoWidth: 300,
+        videoHeight: 300,
+        fps: 20,
+        bitrate: 1500
+    }, {
+        //flashOptions
+        previewWindowWidth: 500,
+        previewWindowHeight: 300,
+        wmode: 'transparent',
+        quality: 'high',
+        allowScriptAccess: 'always'
+    }, function () {
+        cameraList = this.getCameraList();
+        microPhoneList = this.getMicroPhoneList();
+        console.log(cameraList, microPhoneList);
+        for (var i = cameraList.length - 1; i >= 0; i--) {
+            cameraOptions = '<option value="' + i + '">' + cameraList[i] + '</option>' + cameraOptions;
+        }
+        for (var i = microPhoneList.length - 1; i >= 0; i--) {
+            microPhoneOptions = '<option value="' + i + '">' + microPhoneList[i] + '</option>' + microPhoneOptions;
+        }
+        document.getElementById("cameraSelect").innerHTML = cameraOptions;
+        document.getElementById("microPhoneSelect").innerHTML = microPhoneOptions;
+    }, function (code, desc) {
+        console.log(code, desc);
+    });
+    var getCameraIndex = function () {
+        var cameraSelect = document.getElementById("cameraSelect");
+        var cameraIndex = cameraSelect.selectedIndex;
+        return cameraSelect.options[cameraIndex].value;
+    };
+    var getMicroPhoneIndex = function () {
+        var microPhoneSelect = document.getElementById("microPhoneSelect");
+        var microPhoneIndex = microPhoneSelect.selectedIndex;
+        return microPhoneSelect.options[microPhoneIndex].value;
+    };
+    var startPublish = function () {
+//        var publishUrl = channel_info.push_url;
+        var publishUrl = "rtmp://p51704128.live.126.net/live/003235a5a56947e4ae3176b60434d299?wsSecret=57ebcd2c979beffe7d544c9cc1be2299&wsTime=1508465063";
+        myPublisher.setCamera(getCameraIndex());
+        myPublisher.setMicroPhone(getMicroPhoneIndex());
+        myPublisher.startPublish(publishUrl, viewOptions, function (code, desc) {
+            console.log(code, desc);
+            alert(code + '：' + desc);
+        });
+    };
+    var stopPublish = function () {
+        myPublisher.stopPublish();
+    }
+</script>

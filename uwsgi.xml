@@ -1,0 +1,17 @@
+<uwsgi>
+    <master>true</master>
+    <socket>127.0.0.1:2051</socket>
+    <buffer-size>32768</buffer-size>
+
+    <!-- important -->
+    <listen>1024</listen>
+    <gevent>1024</gevent>
+    <gevent-monkey-patch>true</gevent-monkey-patch>
+
+    <pythonpath>.</pythonpath>
+    <module>startup</module>
+    <logdate>true</logdate>
+    <max-requests>10000</max-requests>
+    <processes>2</processes>
+    <pid>./voice_live_web.pid</pid>
+</uwsgi>

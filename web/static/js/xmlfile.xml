@@ -1,0 +1,6 @@
+<urlConfig>
+    <!--<websocketUrl>ws://127.0.0.1:2001/conn_ws/msg?channel_id=</websocketUrl>-->
+    <websocketUrl>ws://192.168.0.107:2001/conn_ws/msg?channel_id=</websocketUrl>
+    <hostessStatus>ws://192.168.0.107:2001/conn_ws/status?channel_id=</hostessStatus>
+    <setTime>3</setTime>
+</urlConfig>
